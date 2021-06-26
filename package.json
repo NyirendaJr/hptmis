@@ -1,0 +1,51 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production"
+    },
+    "devDependencies": {
+        "@inertiajs/inertia": "^0.8.2",
+        "@inertiajs/inertia-vue": "^0.5.4",
+        "@tailwindcss/forms": "^0.2.1",
+        "@tailwindcss/typography": "^0.3.0",
+        "autoprefixer": "^10.0.2",
+        "axios": "^0.21",
+        "laravel-mix": "^6.0.6",
+        "lerna": "^4.0.0",
+        "lodash": "^4.17.19",
+        "portal-vue": "^2.1.7",
+        "postcss": "^8.1.14",
+        "postcss-import": "^12.0.1",
+        "sass": "1.32.13",
+        "sass-loader": "^10.1.1",
+        "tailwindcss": "^2.0.1",
+        "vue": "^2.5.17",
+        "vue-loader": "^15.9.6",
+        "vue-template-compiler": "^2.6.10"
+    },
+    "dependencies": {
+        "@mdi/font": "^5.9.55",
+        "@tookit/vma": "^0.6.9",
+        "core-js": "^3.3.2",
+        "date-fns": "^2.16.1",
+        "dexie": "^3.0.3",
+        "jodit": "^3.6.5",
+        "lodash.truncate": "^4.4.2",
+        "markdown-it-prism": "^2.1.6",
+        "register-service-worker": "^1.6.2",
+        "socket.io-client": "^4.0.0",
+        "sortablejs": "^1.13.0",
+        "timers-browserify": "^2.0.12",
+        "vue-i18n": "^8.24.2",
+        "vue-perfect-scrollbar": "^0.2.1",
+        "vuetify": "^2.5.0",
+        "vuex": "^3.6.2",
+        "vuex-persist": "^2.1.2"
+    }
+}
