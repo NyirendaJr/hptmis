@@ -3,6 +3,13 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\PatientSearchController;
+use App\Http\Controllers\PatientController;
+use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminiDashboardController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,42 +35,31 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/calendar', function () {
-    return Inertia::render('Calendar');
-})->name('calendar');
+Route::group(['middleware' => 'auth:sanctum'], function() {
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/kanboard', function () {
-    return Inertia::render('task/KanBoard');
-})->name('kanboard');
+    /* Patient Management */
+    Route::group(['prefix' => 'patients'], function() {
+        Route::get('patients', [PatientController::class, 'index'])
+            ->name('patients.index');
+        Route::get('register', [PatientController::class, 'create'])
+            ->name('patients.create');
+        Route::get('patients-search', [PatientSearchController::class, 'index'])
+            ->name('patients-search.index');
+    });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/element/cascader', function () {
-    return Inertia::render('element/Cascader');
-})->name('element.cascader');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/task/list', function () {
-    return Inertia::render('task/TaskList');
-})->name('task');
+    /* Admin */
+    Route::group(['prefix' => 'admin'], function() {
+        Route::get('page-permissions', [PermissionController::class, 'index'])
+            ->name('page-permissions.index');
+        Route::get('admin-dashboard', [AdminiDashboardController::class, 'index'])
+            ->name('admin-dashboard.index');
+        Route::get('role-permissions', [RoleController::class, 'index'])
+            ->name('role-permissions.index');
+        Route::get('users', [UserController::class, 'index'])
+            ->name('users.index');
+        Route::get('users/{user}', [UserController::class, 'show'])
+            ->name('users.show');
+    });
+});
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/widgets/social', function () {
-    return Inertia::render('widgets/Social');
-})->name('widgets.social');
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/widgets/statistic', function () {
-    return Inertia::render('widgets/Statistic');
-})->name('widgets.statistic');
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/forms/basic', function () {
-    return Inertia::render('form/BasicForm');
-})->name('forms.basic');
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/forms/stepper', function () {
-    return Inertia::render('form/Steppers');
-})->name('forms.stepper');
-
-// Route::middleware(['auth:sanctum', 'verified'])->get('/chart/echart', function () {
-//     return Inertia::render('form/Steppers');
-// })->name('echart');
-//
-// Route::middleware(['auth:sanctum', 'verified'])->get('/chart/g2', function () {
-//     return Inertia::render('form/Steppers');
-// })->name('g2');

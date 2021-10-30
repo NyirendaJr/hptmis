@@ -7,13 +7,12 @@
     mini-variant-width="64"
     :width="drawerWidth"
   >
-    <v-toolbar color="primary darken-1" dark>
-      <img :src="computeLogo" height="36" alt="Vue Material Admin Template">
+    <v-toolbar color="primary darken-1" dark flat>
+      <!--<img :src="computeLogo" height="36" alt="Vue Material Admin Template">-->
       <v-toolbar-title>
-        <span class="hidden-sm-and-down">Vue Material</span>
+        <span class="hidden-sm-and-down">{{ $t('sys_short_name') }}</span>
       </v-toolbar-title>
     </v-toolbar>
-    <app-switcher />
     <vue-perfect-scrollbar class="app-drawer__scrollbar">
       <div class="app-drawer__inner">
         <nav-list :items="computeMenu" :mini="mini" />
@@ -38,11 +37,10 @@
 <script>
 import { protectedRoute as routes } from '@/router/config'
 import VuePerfectScrollbar from 'vue-perfect-scrollbar'
-import AppSwitcher from './AppSwitcher'
 import NavList from '@/components/nav/NavList'
 export default {
   name: 'AppDrawer',
-  components: { VuePerfectScrollbar, AppSwitcher, NavList },
+  components: { VuePerfectScrollbar, NavList },
   props: {},
   data() {
     return {
@@ -60,7 +58,7 @@ export default {
       return '/static/m.png'
     },
     computeMenu() {
-      console.log(routes);
+      //console.log(routes);
       return this.filterRouteItem(routes)
     },
     computeHeight() {

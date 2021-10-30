@@ -33407,14 +33407,19 @@ select {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-<<<<<<< HEAD
-=======
-
 /* Custom Styles*/
->>>>>>> 9f488330cd571517439797035635e4e16a0495cf
+
 html {
   font-size: 18px !important;
   font-family: Scorecard-Averta, sans-serif, appleLogo !important;
+}
+
+.form-bg-color {
+  background-color: rgb(245, 247, 250)
+}
+
+.container {
+  max-width: 1550px;
 }
 
 @media (min-width: 640px) {

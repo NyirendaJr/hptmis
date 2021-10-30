@@ -10,12 +10,12 @@
           <slot></slot>
         </div>
         <!-- App Footer -->
-        <v-footer height="auto" class="pa-3 app--footer">
+        <!--<v-footer height="auto" class="pa-3 app--footer">
           <span>isocked.com Design &copy; {{ new Date().getFullYear() }}</span>
           <v-spacer />
           <span class="caption mr-1">Make With Love</span>
           <v-icon color="pink" small>mdi-heart</v-icon>
-        </v-footer>
+        </v-footer>-->
       </v-main>
       <!-- Go to top -->
       <app-fab />
@@ -119,7 +119,7 @@ export default {
   border-radius: 0
 .page_wrapper
   min-height: calc(100vh - 112px - 48px)
-  padding-top: 35px
+  //padding-top: 35px
 .container
   max-width: 1200px
 </style>

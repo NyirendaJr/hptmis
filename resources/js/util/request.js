@@ -2,9 +2,9 @@ import axios from 'axios'
 import store from '@/store'
 // create axios
 const service = axios.create({
-  baseURL: process.env.VUE_APP_BASE_API, // api base_url
-  timeout: 50000, // timeout,
-  headers: { 'Access-Control-Allow-Origin': '*' },
+    baseURL: "http://127.0.0.1:8001/api", // api base_url
+    timeout: 50000, // timeout,
+    headers: { 'Access-Control-Allow-Origin': '*' },
 })
 
 const err = (error) => {
