@@ -31,7 +31,7 @@ Route::middleware('auth:sanctum')
     return $request->user();
 });
 
-Route::post('import-health-facilities', ImportHealthFacilityController::class);
+//Route::post('import-health-facilities', ImportHealthFacilityController::class);
 
 Route::group(['middleware' => 'auth:sanctum'], function() {
 
