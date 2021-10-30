@@ -2,6 +2,11 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+<<<<<<< HEAD
+=======
+
+/* Custom Styles*/
+>>>>>>> 9f488330cd571517439797035635e4e16a0495cf
 html {
     font-size: 18px !important;
     font-family: Scorecard-Averta, sans-serif, appleLogo !important;
