@@ -9,6 +9,7 @@ use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminiDashboardController;
+use App\Models\Patient\Patient;
 
 
 /*
@@ -32,7 +33,8 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+    $totalPatients = Patient::all()->count();
+    return Inertia::render('Dashboard', compact('totalPatients'));
 })->name('dashboard');
 
 Route::group(['middleware' => 'auth:sanctum'], function() {

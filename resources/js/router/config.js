@@ -7,14 +7,14 @@ export const protectedRoute = [
             icon: 'mdi-view-dashboard',
         },
     },
-    {
-        path: '/patients-search',
-        name: 'patients-search.index',
-        meta: {
-            title: 'patients_search',
-            icon: 'mdi-magnify',
-        },
-    },
+    // {
+    //     path: '/patients-search',
+    //     name: 'patients-search.index',
+    //     meta: {
+    //         title: 'patients_search',
+    //         icon: 'mdi-magnify',
+    //     },
+    // },
     {
         path: '/patients',
         name: 'patients.index',
