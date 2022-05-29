@@ -1,12 +1,12 @@
 export const protectedRoute = [
-  {
-    path: '/dashboard',
-    name: 'dashboard',
-    meta: {
-      title: 'dashboard',
-      icon: 'mdi-view-dashboard',
+    {
+        path: '/dashboard',
+        name: 'dashboard',
+        meta: {
+            title: 'dashboard',
+            icon: 'mdi-view-dashboard',
+        },
     },
-  },
     {
         path: '/patients-search',
         name: 'patients-search.index',
